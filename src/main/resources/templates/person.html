@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+person page
+
+<ol th:each="person : ${people}">
+    <li><span th:text="${person.firstName}">first name</span></li>
+</ol>
+</body>
+</html>
