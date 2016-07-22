@@ -1,7 +1,7 @@
 package com.suhael.controller;
 
-import com.suhael.repository.person.PersonRepository;
-import com.suhael.repository.person.Person;
+import com.suhael.repository.animal.Animal;
+import com.suhael.repository.animal.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,19 +11,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
-@RequestMapping("/person")
-public class PersonController {
+@RequestMapping("/animal")
+public class AnimalController {
 
     @Autowired
-    private PersonRepository personRepository;
+    private AnimalRepository animalRepository;
 
-    public PersonController() {
+    public AnimalController() {
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public String showSimpleResponse(Model model){
-        List<Person> people = personRepository.findAll();
-        model.addAttribute("people", people);
-        return "person";
+        List<Animal> animals = animalRepository.findAll();
+        model.addAttribute("animals", animals);
+        return "animal";
     }
 }

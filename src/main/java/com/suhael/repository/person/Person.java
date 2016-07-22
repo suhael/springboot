@@ -1,4 +1,4 @@
-package com.suhael.repository.entity;
+package com.suhael.repository.person;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
