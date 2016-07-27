@@ -5,8 +5,22 @@
 <body>
 person page
 
+<h3>Add a book</h3>
+<form method="POST" th:action="@{/person}">
+    <label for="firstName">firstName:</label>
+    <input type="text" name="firstName" size="50"></input><br/>
+    <label for="lastName">lastName:</label>
+    <input type="text" name="lastName" size="50"></input><br/>
+    <input type="submit"></input>
+</form>
+
 <ol th:each="person : ${people}">
-    <li><span th:text="${person.firstName}">first name</span></li>
+    <form th:action="@{/person}" th:method="DELETE">
+        <li><a th:href="@{'/person/' + ${person.id}}"><span th:text="${person.firstName}">first name</span></a>
+            <input type="hidden" name="id" size="50" th:value="${person.id}"></input>
+            <input type="submit" value="delete"></input>
+        </li>
+    </form>
 </ol>
 </body>
 </html>

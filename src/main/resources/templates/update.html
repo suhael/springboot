@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+person page
+
+<h3>Add a book</h3>
+<form th:method="PUT" th:action="@{/person}">
+    <label for="id">id:</label>
+    <input type="text" name="id" size="50" th:value="${person.id}"></input><br/>
+    <label for="firstName">firstName:</label>
+    <input type="text" name="firstName" size="50" th:value="${person.firstName}"></input><br/>
+    <label for="lastName">lastName:</label>
+    <input type="text" name="lastName" size="50" th:value="${person.lastName}"></input><br/>
+    <input type="submit"></input>
+</form>
+</body>
+</html>
