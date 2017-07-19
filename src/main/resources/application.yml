@@ -1,0 +1,5 @@
+spring:
+  redis:
+    sentinel:
+      nodes: 10.174.184.58:26379
+      master: mymaster
