@@ -4,3 +4,6 @@ create table customers (
     last_name varchar(255),
     primary key (id)
 );
+
+INSERT INTO customers(id, first_name, last_name)
+VALUES (1, 'first', 'Bauer');
