@@ -14,7 +14,7 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.greaterThanOrEqualTo;
+import static org.hamcrest.Matchers.greaterThan;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = SpringbootApplication.class)
@@ -26,8 +26,14 @@ public class CustomerRepositoryIT {
 
     @Test
     public void testList() throws Exception {
-        List<Customer> results = customerRepository.findByLastName("Mayer");
-        assertThat(results.size(), is(greaterThanOrEqualTo(0)));
+        customerRepository.save(new Customer("Jack", "Bauer"));
+        customerRepository.save(new Customer("Chloe", "O'Brian"));
+        customerRepository.save(new Customer("Kim", "Bauer"));
+        customerRepository.save(new Customer("David", "Palmer"));
+        customerRepository.save(new Customer("Michelle", "Dessler"));
+
+        List<Customer> results = customerRepository.findByLastName("Bauer");
+        assertThat(results.size(), is(greaterThan(0)));
     }
 
 }
